@@ -1,0 +1,32 @@
+Sending build context to Docker daemon  2.56 kB
+Step 1 : FROM alpine:latest
+Sending build context to Docker daemon 3.072 kB
+Step 1 : FROM alpine:latest
+latest: Pulling from library/alpine
+627beaf3eaaf: Pulling fs layer
+627beaf3eaaf: Retrying in 5 seconds
+627beaf3eaaf: Retrying in 4 seconds
+627beaf3eaaf: Retrying in 3 seconds
+627beaf3eaaf: Retrying in 2 seconds
+627beaf3eaaf: Retrying in 1 second
+627beaf3eaaf: Verifying Checksum
+627beaf3eaaf: Download complete
+627beaf3eaaf: Pull complete
+Digest: sha256:58e1a1bb75db1b5a24a462dd5e2915277ea06438c3f105138f97eb53149673c4
+Status: Downloaded newer image for alpine:latest
+ ---> 4a415e366388
+Step 2 : MAINTAINER zuolan <i@zuolan.me>
+ ---> Running in 5be541a31209
+ ---> 0a423299fba5
+Removing intermediate container 5be541a31209
+Step 3 : ENV HOME /home/user
+ ---> Running in 4f3a0fd35c31
+ ---> d38e512993b6
+Removing intermediate container 4f3a0fd35c31
+Step 4 : RUN mkdir -p /home/user/workspace
+ ---> Running in 0a92906aa36a
+ ---> 8794b2f29f88
+Removing intermediate container 0a92906aa36a
+Step 5 : RUN apk add --update --no-cache vim &&     rm -rf /var/cache/* /var/log/* /var/tmp/*
+ ---> Running in 763fc3d670ce
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.5/main/x86_64/APKINDEX.tar.gz
