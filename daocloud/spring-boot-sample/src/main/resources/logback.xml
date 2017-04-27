@@ -1,0 +1,40 @@
+<configuration scan="true" scanPeriod="10 seconds">
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<jmxConfigurator />
+
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder>
+			<pattern>
+				!@[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%X{uuid}] [%thread]
+				[%-5level] [%logger{96}] [%M] [%line] - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/spring boot sample.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				!@[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%X{uuid}] [%thread]
+				[%-5level] [%logger{96}] [%M] [%line] - %msg%n
+			</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<logger name="org.springframework" level="WARN" />
+	<logger name="org.hibernate" level="WARN" />
+
+	<root level="INFO">
+		<appender-ref ref="file" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>  

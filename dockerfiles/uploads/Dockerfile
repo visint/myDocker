@@ -1,7 +1,8 @@
-FROM hub.c.163.com/public/ubuntu:16.04-tools
-MAINTAINER ZuoLan <i@zuolan.me>
+FROM hub.c.163.com/public/ubuntu:14.04
+MAINTAINER jybyun <jyb@jybyun.top>
 
-RUN apt-get -y install \
+RUN apt-get update && \
+apt-get -y install \
     nginx \
     ca-certificates \
     php5 php5-fpm php5-cli php5-json php5-curl
@@ -17,5 +18,6 @@ RUN apt-get autoremove -y && \
     apt-get autoclean -y && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+EXPOSE 80
 
-CMD ["sh", "-c", "chown -R www-data: /www && service php5-fpm start && nginx"]
+ENTRYPOINT ["sh", "-c", "chown -R www-data: /www && service php5-fpm start && nginx"]
