@@ -1,4 +1,3 @@
-FROM gliderlabs/alpine:3.4
-RUN apk update
+FROM jyb-alpine
 RUN apk add vim
-
+ENTRYPOINT ["vim"]
