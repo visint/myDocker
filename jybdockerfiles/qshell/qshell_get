@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "http://o6zvblq1c.bkt.clouddn.com/$*"
+wget "http://o6zvblq1c.bkt.clouddn.com/$*"
