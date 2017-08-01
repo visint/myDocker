@@ -1,0 +1,24 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  matrix:
+    - UTIL="sshd"
+    - UTIL="phpcs"
+    - UTIL="git"
+    - UTIL="git/clone"
+    - UTIL="git/pull"
+    - UTIL="backup"
+    - UTIL="backup/restore"
+
+before_script:
+  - docker version
+  - cd ${UTIL}
+
+script:
+  - docker build -t ${UTIL} .
+
+after_script:
+  - docker images
