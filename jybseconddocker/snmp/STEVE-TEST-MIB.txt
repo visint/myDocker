@@ -1,0 +1,55 @@
+STEVE-TEST-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+        enterprises
+                FROM RFC1155-SMI
+        DisplayString
+                FROM RFC-1213
+        OBJECT-TYPE, Integer32
+                FROM SNMPv2-SMI
+        InetAddressType, InetAddress
+                FROM INET-ADDRESS-MIB;
+
+company         OBJECT IDENTIFIER ::= {enterprises 12345}
+products        OBJECT IDENTIFIER ::= {company 1}
+
+demoIpTable OBJECT-TYPE
+        SYNTAX          SEQUENCE OF DemoIpEntry
+        MAX-ACCESS      not-accessible
+        STATUS          current
+        DESCRIPTION
+                "Demo IP Table"
+        ::= { products 1 }
+
+demoIpEntry      OBJECT-TYPE
+        SYNTAX          DemoIpEntry
+        MAX-ACCESS      not-accessible
+        STATUS          current
+        DESCRIPTION
+                "Demo IP entry"
+        INDEX   { demoIpIndex }
+        ::= { demoIpTable 1 }
+
+DemoIpEntry ::= SEQUENCE {
+        demoIpIndex      Integer32,
+        demoIpAddress    OCTET STRING
+}
+
+demoIpIndex OBJECT-TYPE
+        SYNTAX          Integer32
+        MAX-ACCESS      not-accessible
+        STATUS          current
+        DESCRIPTION
+                "Demo IP entry index"
+        ::= { demoIpEntry 1 }
+
+demoIpAddress OBJECT-TYPE
+    SYNTAX      OCTET STRING
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+        "Demo IP Address"
+    ::= { demoIpEntry 2 }
+
+END
+
