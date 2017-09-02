@@ -1,7 +1,7 @@
 # install snmp
 # version 1.0  
   
-FROM jyb-ubuntu-tool:16.04
+FROM jyb-ubuntu-tools:16.04
 MAINTAINER jyb "jiang_yi_bo@gmail.com"  
  
 RUN apt-get update &&\
