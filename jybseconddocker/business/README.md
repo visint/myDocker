@@ -6,4 +6,8 @@
 
 由于内容是汉字，所以放在国内的coding。
 
+更新 文档
+
+docker exec -it business build.sh
+
 代码：https://coding.net/u/openwrtio/p/portal/git
