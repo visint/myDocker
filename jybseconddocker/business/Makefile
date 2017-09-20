@@ -5,7 +5,8 @@ build:
 	sudo docker build --rm -t business:1.0 .
 
 run:
-	sudo docker run -d --restart=always  --name business -v /home/jiang:/mnt -p 9091:80 business:1.0
+#	sudo docker run -d --restart=always  --name business -v /home/jiang:/mnt -p 9091:80 business:1.0
+	sudo docker run -d --name business -v /home/jiang:/mnt -p 9091:80 business:1.0
 
 kill:
 	-sudo docker kill ftpd_server
