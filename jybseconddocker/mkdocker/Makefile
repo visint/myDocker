@@ -5,7 +5,7 @@ build:
 	sudo docker build --rm -t mkdocker:1.0 .
 
 run:
-	sudo docker run -d --restart=always  --name mkdocker -v /home/bobo:/mnt -p 9093:80 mkdocker:1.0
+	sudo docker run -d --restart=always  --name mkdocker -v /home/jiang:/mnt -p 9093:80 mkdocker:1.0
 #	sudo docker run -d --name business -v /home/jiang:/mnt -p 9091:80 business:1.0
 
 kill:
