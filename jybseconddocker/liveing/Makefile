@@ -5,7 +5,7 @@ build:
 	sudo docker build --rm -t liveing:1.0 .
 
 run:
-	sudo docker run -d --restart=always  --name liveing -v /home/jiang:/mnt -p 9092:80 business:1.0
+	sudo docker run -d --restart=always  --name liveing -v /home/jiang:/mnt -p 9092:80 liveing:1.0
 #	sudo docker run -d --name liveing -v /home/jiang:/mnt -p 9092:80 liveing:1.0
 
 kill:
