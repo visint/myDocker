@@ -3,7 +3,9 @@
 build:
 
 run:
-	sudo docker run -d --restart=always  --name mkowncloud -v /Blinux/owncloud:/var/www/html/data -p 9095:80 owncloud
+#	cp fileactions.js /var/www/html/apps/files/js/
+#	cp filelist.js  /var/www/html/apps/files/js/
+	sudo docker run -d --restart=always  --name mkowncloud -v /mnt/eShare:/var/www/html/data -p 9095:80 owncloud
 #	sudo docker run -d --name business -v /home/jiang:/mnt -p 9091:80 business:1.0
 
 kill:
