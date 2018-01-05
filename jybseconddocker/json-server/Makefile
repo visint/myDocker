@@ -1,11 +1,10 @@
 .PHONY: build run kill enter push pull
 
 build:
-	git clone https://github.com/ant-design/ant-design-pro.git
-	sudo docker build --rm -t jyb-antdesign:1.0 .
+	sudo docker build --rm -t json-server:1.0 .
 
 run:
-	sudo docker run -d -it --restart=always  --name myantdesign -v /home/jiang:/mnt -p 9091:8000 jyb-antdesign:1.0 /bin/sh
+	sudo docker run -d -it --restart=always  --name json-server -v /home/jiang:/data -p 9091:8000 json-server:1.0
 #	sudo docker run -d --name business -v /home/jiang:/mnt -p 9091:80 business:1.0
 
 kill:

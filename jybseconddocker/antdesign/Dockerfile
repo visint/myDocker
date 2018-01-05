@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get install -y git npm curl
 RUN npm install -g n
 RUN n stable
-RUN git clone https://github.com/ant-design/ant-design-pro.git
+COPY ant-design-pro /root/
 WORKDIR /root/ant-design-pro
 RUN npm install
 RUN npm build
