@@ -1,0 +1,7 @@
+- hosts: all
+  gather_facts: False
+  vars: 
+   key: Ansible
+  tasks:
+  - name: display Host Variable from hostfile
+    debug: msg=" The {{ inventory_hostname }} Value is {{ key }}"
