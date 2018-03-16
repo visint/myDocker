@@ -4,12 +4,12 @@ build:
 	git clone https://github.com/PanJiaChen/vue-element-admin.git
 #	sudo docker build -t vue:1.0 .
 
-run: kill
-	sudo docker run -d --name beego -p 8080:8080 beego:1.0
+run: 
+	docker run -d --name vue1 -p 21:21 -p 9527:9527 -v "$PWD":/mnt -e "PUBLICHOST=localhost" -e "ADDED_FLAGS=-d -d" jyb-vue:1.1
 
 kill:
-	-sudo docker kill beego
-	-sudo docker rm beego
+	-sudo docker kill vue1
+	-sudo docker rm vue1
 
 enter:
 	sudo docker exec -it ftpd_server sh -c "export TERM=xterm && bash"

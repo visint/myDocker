@@ -1,3 +1,80 @@
+#解决Error: ENOENT: no such file or directory, scandir 'D:\IdeaWork\code-front-jet\node_modules\.npminstall\node-sass\3.7.0\node-sass\vendor'
+在使用npm安装node-sass的时候，可能会出现如下的报错：
+Error: ENOENT: no such file or directory, scandir 'D:\IdeaWork\code-front-jet\node_modules\.npminstall\node-sass\3.7.0\node-sass\vendor'
+
+    at Error (native)
+    at Object.fs.readdirSync (fs.js:856:18)
+    at Object.getInstalledBinaries (D:\IdeaWork\code-front-jet\node_modules\.npminstall\node-sass\3.7.0\node-sass\lib\extensions.js:74:13)
+    at foundBinariesList (D:\IdeaWork\code-front-jet\node_modules\.npminstall\node-sass\3.7.0\node-sass\lib\errors.js:20:15)
+    at foundBinaries (D:\IdeaWork\code-front-jet\node_modules\.npminstall\node-sass\3.7.0\node-sass\lib\errors.js:15:5)
+    at Object.module.exports.missingBinary (D:\IdeaWork\code-front-jet\node_modules\.npminstall\node-sass\3.7.0\node-sass\lib\errors.js:45:5)
+    at Object.<anonymous> (D:\IdeaWork\code-front-jet\node_modules\.npminstall\node-sass\3.7.0\node-sass\lib\index.js:14:28)
+    at Module._compile (module.js:413:34)
+    at Object.Module._extensions..js (module.js:422:10)
+    at Module.load (module.js:357:32)
+    at Function.Module._load (module.js:314:12)
+    at Module.require (module.js:367:17)
+    at require (internal/module.js:16:19)
+    at Object.<anonymous> (D:\IdeaWork\code-front-jet\node_modules\.npminstall\gulp-sass\2.2.0\gulp-sass\index.js:186:21)
+    at Module._compile (module.js:413:34)
+    at Object.Module._extensions..js (module.js:422:10)
+解决方案是执行以下方法：
+npm rebuild node-sass
+问题原因：别问我，我也不知道，貌似是我在github上不知道哪个角落找到的答案， 这个问题很坑。
+
+如果你尝试了上面的方法还是没有解决，欢迎在下面留下你的问题，一起讨论 
+
+
+
+#解决vue-cli 解决Invalid Host header
+在webpack.dev.conf.js中添加：disableHostCheck: true
+ 
+devServer: {
+ public: 'local.kingsum.biz',
+ clientLogLevel: 'warning',
+ historyApiFallback: true,
+hot: true,
+compress: true,
+host: HOST || config.dev.host,
+port: PORT || config.dev.port,
+ 
+open: config.dev.autoOpenBrowser,
+overlay: config.dev.errorOverlay
+? { warnings: false, errors: true }
+: false,
+publicPath: config.dev.assetsPublicPath,
+proxy: config.dev.proxyTable,
+quiet: true, // necessary for FriendlyErrorsPlugin
+
+watchOptions: {
+poll: config.dev.poll,
+},
+disableHostCheck: true     加上这段
+}
+
+  # 克隆项目
+    git clone https://github.com/PanJiaChen/vue-element-admin.git
+
+    # 安装依赖
+    npm install
+    //or # 建议不要用cnpm  安装有各种诡异的bug 可以通过如下操作解决npm速度慢的问题
+    npm install --registry=https://registry.npm.taobao.org
+
+    # 本地开发 开启服务
+    npm run dev
+浏览器访问 http://localhost:9527
+
+发布
+
+    # 发布测试环境 带webpack ananalyzer
+    npm run build:sit-preview
+
+    # 构建生成环境
+    npm run build:prod
+
+
+
+
 # docker-node
 Docker实战--部署简单nodejs应用  
 
