@@ -1,7 +1,7 @@
 - hosts: all
   gather_facts: False
   vars: 
-   key: Ansible
+   key: httpd
   tasks:
   - name: display Host Variable from hostfile
-    debug: msg=" The {{ inventory_hostname }} Value is {{ key }}"
+    apt: name={{ key }} state=present
