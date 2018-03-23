@@ -5,7 +5,7 @@ build:
 #	sudo docker build -t vue:1.0 .
 
 run: 
-	docker run -d --name vue1 -p 21:21 -p 9527:9527 -v "$PWD":/mnt -e "PUBLICHOST=localhost" -e "ADDED_FLAGS=-d -d" jyb-vue:1.1
+	docker run -d --name vue1 -p 21:21 -p 9527:9527 -v $(PWD):/mnt -e "PUBLICHOST=localhost" -e "ADDED_FLAGS=-d -d" jyb-vue:1.1
 
 kill:
 	-sudo docker kill vue1
