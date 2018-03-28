@@ -1,5 +1,10 @@
 FROM hub.c.163.com/netease_comb/debian:7.9    
-MAINTAINER netease
+#MAINTAINER jiang_yi_bo "admin@sinzuo.com"
+#CMD ["sh", "-c", "/etc/init.d/tftpd-hpa start&& testServer"]
+#CMD ["/etc/init.d/tftpd-hpa","start"]
+#ENTRYPOINT ["/etc/init.d/tftpd-hpa","start"]
+
+
 
 RUN apt-get update && \
 apt-get install -y nginx

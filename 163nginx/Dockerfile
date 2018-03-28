@@ -11,5 +11,6 @@ RUN mkdir -p /var/run/sshd && \
 
 EXPOSE 22 80 443
 
+
 ENTRYPOINT /etc/init.d/nginx start && /usr/sbin/sshd -D
 

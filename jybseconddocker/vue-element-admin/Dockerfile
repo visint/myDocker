@@ -1,5 +1,10 @@
  #设置基础镜像,如果本地没有该镜像，会从Docker.io服务器pull镜像
 FROM node
+#MAINTAINER jiang_yi_bo "admin@sinzuo.com"
+#CMD ["sh", "-c", "/etc/init.d/tftpd-hpa start&& testServer"]
+#CMD ["/etc/init.d/tftpd-hpa","start"]
+#ENTRYPOINT ["/etc/init.d/tftpd-hpa","start"]
+
 
 #创建app目录,保存我们的代码
 RUN mkdir -p /usr/src/node

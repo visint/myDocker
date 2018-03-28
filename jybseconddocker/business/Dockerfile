@@ -1,5 +1,10 @@
 FROM markdown:1.0
-MAINTAINER jiang_yi_bo <jiang_yi_bo@hotmail.com>
+#MAINTAINER jiang_yi_bo "admin@sinzuo.com"
+#CMD ["sh", "-c", "/etc/init.d/tftpd-hpa start&& testServer"]
+#CMD ["/etc/init.d/tftpd-hpa","start"]
+#ENTRYPOINT ["/etc/init.d/tftpd-hpa","start"]
+
+
 
 ADD ./markdown/. /usr/share/nginx/html/portal
 ADD build.sh /usr/sbin/

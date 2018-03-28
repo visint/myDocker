@@ -1,5 +1,10 @@
 FROM node:latest
-MAINTAINER Christian Lück <christian@lueck.tv>
+#MAINTAINER jiang_yi_bo "admin@sinzuo.com"
+#CMD ["sh", "-c", "/etc/init.d/tftpd-hpa start&& testServer"]
+#CMD ["/etc/init.d/tftpd-hpa","start"]
+#ENTRYPOINT ["/etc/init.d/tftpd-hpa","start"]
+
+
 
 RUN npm install -g json-server
 

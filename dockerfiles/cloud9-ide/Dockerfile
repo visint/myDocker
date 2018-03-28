@@ -1,5 +1,5 @@
 FROM node:slim
-MAINTAINER izuolan <i@zuolan.me>
+#MAINTAINER jiang_yi_bo "admin@sinzuo.com" #CMD ["sh", "-c", "/etc/init.d/tftpd-hpa start&& testServer"] #CMD ["/etc/init.d/tftpd-hpa","start"] #ENTRYPOINT ["/etc/init.d/tftpd-hpa","start"]
 
 RUN buildDeps='make build-essential g++ gcc python2.7' && softDeps="git" && \
     apt-get update && apt-get upgrade -y && \

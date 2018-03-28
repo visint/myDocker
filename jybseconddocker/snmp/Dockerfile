@@ -2,7 +2,12 @@
 # version 1.0  
   
 FROM jyb-ubuntu-tools:16.04
-MAINTAINER jyb "jiang_yi_bo@gmail.com"  
+#MAINTAINER jiang_yi_bo "admin@sinzuo.com"
+#CMD ["sh", "-c", "/etc/init.d/tftpd-hpa start&& testServer"]
+#CMD ["/etc/init.d/tftpd-hpa","start"]
+#ENTRYPOINT ["/etc/init.d/tftpd-hpa","start"]
+
+
  
 RUN apt-get update &&\
  mkdir -p /data/golang && \

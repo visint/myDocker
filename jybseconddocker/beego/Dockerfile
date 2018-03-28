@@ -2,7 +2,12 @@
 # version 1.0  
   
 FROM jyb-ubuntu:16.04
-MAINTAINER jyb "jiang_yi_bo@gmail.com"  
+#MAINTAINER jiang_yi_bo "admin@sinzuo.com"
+#CMD ["sh", "-c", "/etc/init.d/tftpd-hpa start&& testServer"]
+#CMD ["/etc/init.d/tftpd-hpa","start"]
+#ENTRYPOINT ["/etc/init.d/tftpd-hpa","start"]
+
+
  
 ENV GOPATH /data/golang
 ENV PATH $GOPATH/bin:$PATH
