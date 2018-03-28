@@ -1,6 +1,12 @@
 .PHONY: build run kill enter push pull
 
-#VPATH 设置  make run VPATH=PWD 或者  make run VPATH=/home/jiang
+#VPATH 设置  make run 默认映射当前目录 或者  make run VPATH=/home/jiang
+
+ifneq ($(VPATH),)
+VPATH?=$(VPATH)
+else
+VPATH?=$(PWD)
+endif
 
 
 build:
@@ -12,11 +18,11 @@ run:
 #	sudo docker run -d --name business -v /home/jiang:/mnt -p 9091:80 business:1.0
 
 kill:
-	-sudo docker kill ftpd_server
-	-sudo docker rm ftpd_server
+	-sudo docker kill some-nginx
+	-sudo docker rm some-nginx
 
 enter:
-	sudo docker exec -it ftpd_server sh -c "export TERM=xterm && bash"
+	sudo docker exec -it some-nginx sh -c "export TERM=xterm && bash"
 
 # git commands for quick chaining of make commands
 push:
